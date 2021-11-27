@@ -14,10 +14,6 @@ const routes: Routes = [
   redirectTo: '/index'
 },
 {
-  path: 'error',
-  component: ErrorComponent,
-},
-{
   path: 'seguridad',
   loadChildren: () => import('./modulos/seguridad/seguridad.module').then(m => m.SeguridadModule)
 },
@@ -36,6 +32,10 @@ const routes: Routes = [
 {
   path: 'servicios',
   loadChildren: () => import('./modulos/servicios/servicios.module').then(m => m.ServiciosModule)
+},
+{
+  path: 'error',
+  component: ErrorComponent,
 },
 {
   path: '**',
