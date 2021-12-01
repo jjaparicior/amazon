@@ -6,8 +6,9 @@
         <li><a routerLink="/encomiendas/get">Encomiendas</a></li>
         <li><a routerLink="/clientes/get">Clientes</a></li>
         <li><a routerLink="/servicios/get">Servicios</a></li>
-        <li><a routerLink="/seguridad/login">Login</a></li>
-        <li><a routerLink="/seguridad/logout">Logout</a></li>
+        <!-- Sesion -->
+      <li *ngIf="!activeSession"><a routerLink="/seguridad/login">Login</a></li>
+      <li *ngIf="activeSession"><a routerLink="/seguridad/logout">Cerrar Sesion</a></li>
       </ul>
     </div>
   </nav>
