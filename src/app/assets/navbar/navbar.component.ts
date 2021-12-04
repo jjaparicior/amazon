@@ -13,12 +13,14 @@ export class NavbarComponent implements OnInit {
   constructor(private seguridadService: SeguridadService) { }
 
   activeSession?:boolean = false;
+  nombre?:string ='';
   subs: Subscription = new Subscription();
 
   ngOnInit(): void {
     this.subs = this.seguridadService.datosUsuarioSesion().subscribe((data: UsuarioModelo) => {
       console.log(data)
-        this.activeSession = data.isLoggedIn;
+      this.nombre = data.username;
+      this.activeSession = data.isLoggedIn;
     })
   }
 

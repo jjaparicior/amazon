@@ -1,14 +1,15 @@
 <nav>
     <div class="nav-wrapper cyan darken-4">
-      <a href="#" class="brand-logo"><img style="height: 66px" alt="Responsive image" class="img-fluid" src="https://yt3.ggpht.com/V9v7ldiYlhX26Di6THQ2o5C4C1hh-Ob79caJUy4Y5nmg6odKgPtR6l7R6ozs0LCQd9VVPB5sFQ=s900-c-k-c0x00ffffff-no-rj"></a>
+      <a href="#" class="brand-logo"><img style="height: 61px" alt="Responsive image" class="img-fluid" src="https://yt3.ggpht.com/V9v7ldiYlhX26Di6THQ2o5C4C1hh-Ob79caJUy4Y5nmg6odKgPtR6l7R6ozs0LCQd9VVPB5sFQ=s900-c-k-c0x00ffffff-no-rj">Bienvenido {{nombre}}</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a routerLink="/admin/get">Usuarios</a></li>
-        <li><a routerLink="/encomiendas/get">Encomiendas</a></li>
-        <li><a routerLink="/clientes/get">Clientes</a></li>
-        <li><a routerLink="/servicios/get">Servicios</a></li>
+        <li *ngIf="activeSession"><a routerLink="/admin/get">Usuarios</a></li>
+        <li *ngIf="activeSession"><a routerLink="/encomiendas/get">Encomiendas</a></li>
+        <li *ngIf="activeSession"><a routerLink="/clientes/get">Clientes</a></li>
+        <li *ngIf="activeSession"><a routerLink="/servicios/get">Servicios</a></li>
         <!-- Sesion -->
-      <li *ngIf="!activeSession"><a routerLink="/seguridad/login">Login</a></li>
-      <li *ngIf="activeSession"><a routerLink="/seguridad/logout">Cerrar Sesion</a></li>
+        <li *ngIf="!activeSession"><a routerLink="/seguridad/login">Login</a></li>
+        <li *ngIf="!activeSession"><a routerLink="/admin/create">Registrarme</a></li>
+        <li *ngIf="activeSession"><a routerLink="/seguridad/logout">Cerrar Sesion</a></li>
       </ul>
     </div>
   </nav>
