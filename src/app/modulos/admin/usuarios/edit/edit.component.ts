@@ -21,9 +21,8 @@ export class EditComponent implements OnInit {
       id: ['', [Validators.required]],
       nombre: ['', [Validators.required]],
       apellidos: ['', [Validators.required]],
-      telefono: ['', [Validators.required, Validators.minLength(6)
-]],
-      correo: ['', [Validators.required, Validators.email]],
+      telefono: ['', [Validators.required, Validators.minLength(6)]],
+      correo: [{value: '', disabled: true}, [Validators.required, Validators.email]],
     });
  
     id: string=''
