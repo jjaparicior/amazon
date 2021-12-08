@@ -3,19 +3,23 @@ import { RouterModule, Routes } from '@angular/router';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { GetComponent } from './get/get.component';
+import { SessionGuard } from 'src/app/guards/session.guard';
 
 const routes: Routes = [
   {
     path: 'create',
     component: CreateComponent,
+    canActivate: [SessionGuard]
   },
   {
-    path: 'edit',
+    path: 'edit/:id',
     component: EditComponent,
+    canActivate: [SessionGuard]
   },
   {
     path: 'get',
     component: GetComponent,
+    canActivate: [SessionGuard]
   },
 ];
 

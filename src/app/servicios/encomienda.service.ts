@@ -23,6 +23,10 @@ export class EncomiendaService {
           peso: encomienda.peso,
           tipo: encomienda.tipo,
           presentacion: encomienda.presentacion,
+        }, {
+          headers: new HttpHeaders({
+            "Authorization": `Bearer ${this.token}`
+          })
         });
       }
 

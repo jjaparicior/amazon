@@ -25,6 +25,10 @@ export class ServicioService {
           origen: servicio.origen,
           destino: servicio.destino,
           encomienda: servicio.encomienda,
+        }, {
+          headers: new HttpHeaders({
+            "Authorization": `Bearer ${this.token}`
+          })
         });
       }
 

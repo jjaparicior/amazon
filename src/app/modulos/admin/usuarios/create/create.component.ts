@@ -14,6 +14,8 @@ export class CreateComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
     private usuarioService: UsuarioService,
+    // private clienteService: ClienteService,
+    // private encomiendaService: EncomiendaService,
     private router: Router) { }
 
     fgValidacion = this.fb.group({
@@ -22,6 +24,9 @@ export class CreateComponent implements OnInit {
       telefono: ['', [Validators.required, Validators.minLength(6)]],
       correo: ['', [Validators.required, Validators.email]],
     });
+
+    // listadoClientes: UsuarioModelo[] = []
+    // listadoEncomiendas: UsuarioModelo[] = []
 
   ngOnInit(): void {
   }
@@ -42,4 +47,5 @@ export class CreateComponent implements OnInit {
       alert("Error en el envio");
     })
   }
+
 }

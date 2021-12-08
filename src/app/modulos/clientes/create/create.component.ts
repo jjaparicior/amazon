@@ -37,8 +37,8 @@ export class CreateComponent implements OnInit {
     cliente.nombre = this.fgValidacion.controls["nombre"].value;
     cliente.apellidos = this.fgValidacion.controls["apellidos"].value;
     cliente.pais = this.fgValidacion.controls["pais"].value;
-    cliente.ciudad = this.fgValidacion.controls["ciudad"].value;
     cliente.departamento = this.fgValidacion.controls["departamento"].value;
+    cliente.ciudad = this.fgValidacion.controls["ciudad"].value;
     cliente.direccion = this.fgValidacion.controls["direccion"].value;
     cliente.telefono = this.fgValidacion.controls["telefono"].value;
     cliente.email = this.fgValidacion.controls["email"].value;
